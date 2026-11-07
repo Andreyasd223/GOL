@@ -1,4 +1,7 @@
 import numpy as np
+import tkinter as tk
+CELL_SIZE = 25
+board_history = []
 
 
 board = np.zeros((22, 22), dtype=object)
@@ -60,3 +63,14 @@ def cell_action(pos):
             return 0
         case n if n == 3 and cell == 0:
             return 1
+
+def update_board():
+    temp_board = np.copy(board)
+    for row in range(1, 21):
+        for col in range(1, 21):
+            temp_board[row][col] = cell_action((row, col))
+    board = np.copy(temp_board)
+    board_history.append(np.copy(board))
+
+
+    
