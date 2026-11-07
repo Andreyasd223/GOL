@@ -6,6 +6,7 @@ board[0, :] = None
 board[-1, :] = None
 board[:, 0] = None
 board[:, -1] = None
+# Main matrix 20x20 with a None border
 
 
 matrix = np.array([
@@ -22,21 +23,24 @@ matrix = np.array([
     [None, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, None],
     [None, None, None, None, None, None, None, None, None, None, None, None]
 ], dtype=object)
-#Test matrix 10x10 {12x12}
+# Test matrix 10x10 {12x12}
 
 
 
-# 0, 0, 0
-# 0,pos,0
-# 0, 0, 0
 def get_neighbors(pos):
+
     cell_row, cell_col = pos
     if cell_row > 0 and cell_row < 11 and cell_col > 0 and cell_col < 11:
         pass
     else:
         return "ERROR out of range"
+    
     neighbors = board[cell_row-1:cell_row+2, cell_col-1:cell_col+2]
+    # 0, 0, 0
+    # 0,pos,0
+    # 0, 0, 0
     neighbors_ls = []
+
     for row in neighbors:
         for cell in row:
             if cell == 1:
@@ -56,4 +60,3 @@ def cell_action(pos):
             return 0
         case n if n == 3 and cell == 0:
             return 1
-
