@@ -1,4 +1,5 @@
 Game Of Life (GOL):
+
 The main idea:
     idea of the project its to remake the game in 20x20 board with some features
     i didnt use the .gitignore file bcz the project doesnt contain other files
