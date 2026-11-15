@@ -32,7 +32,8 @@ The code:
         ---------- WINDOW ----------:
             some initilation lines 
         ---------- LOGIC ----------:
-            functions that links to some buttons                                                                                             runs the game (run_game()) 
+            functions that links to some buttons
+            runs the game (run_game()) 
             start stop button(start_stop())
             updates the board (next_generation()) 
             replaces the board by the old generation (previous_generation())
