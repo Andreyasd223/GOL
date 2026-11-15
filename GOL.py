@@ -1,6 +1,5 @@
 import numpy as np
 import tkinter as tk
-import time 
 
 
 CELL_SIZE = 25
@@ -113,7 +112,7 @@ controls.pack(pady=10)
 running = False
 selected_tool = tk.StringVar(value="Cell")
 
-
+# ---------- LOGIC ----------
 
 def run_game():
     global board
@@ -150,9 +149,6 @@ def previous_generation():
     if not running and board_history:
         board = board_history.pop()
         draw_board(canvas, board)
- 
-
-# ---------- BOARD ----------
 
 def clear_board():
     board[1:21, 1:21] = 0
